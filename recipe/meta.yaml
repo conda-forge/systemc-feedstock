@@ -63,6 +63,7 @@ outputs:
           - lib/libsystemc.?.?.?.dylib                           # [osx]
       test:
         commands:
+          - ls -l "$PREFIX"/lib/
           - test -f "$PREFIX"/lib/libsystemc"$SHLIB_EXT".{{ version }}  # [linux]
           - test -f "$PREFIX"/lib/libsystemc.{{ version }}"$SHLIB_EXT"  # [osx]
       about:
