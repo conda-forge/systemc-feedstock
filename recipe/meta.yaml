@@ -26,7 +26,6 @@ source:
   patches:
     - patches/0001-examples-sysc-2.3-simple_async-needs-PTHREADS.patch  # [not win] https://github.com/accellera-official/systemc/pull/44
     - patches/0002-rm-project-default-CXX-std.patch
-    - patches/0003-fixup-illegal-utf-8-characters-in-comments.patch
 
 build:
   number: 0
@@ -194,8 +193,8 @@ outputs:
           - make -C examples/build-unix -j $CPU_COUNT run        # [linux]
           - make -C examples/build-unix -j $CPU_COUNT check      # [linux]
           # osx ld64 doesn't support '-rpath=' must be '-rpath,'
-          - make -C examples/build-unix -j $CPU_COUNT run LDFLAG_RPATH=-Wl,-rpath, FLAGS_WERROR="-Werror -Wno-error=invalid-utf8"    # [osx]
-          - make -C examples/build-unix -j $CPU_COUNT check LDFLAG_RPATH=-Wl,-rpath, FLAGS_WERROR="-Werror -Wno-error=invalid-utf8"  # [osx]
+          - make -C examples/build-unix -j $CPU_COUNT run LDFLAG_RPATH=-Wl,-rpath,   # [osx]
+          - make -C examples/build-unix -j $CPU_COUNT check LDFLAG_RPATH=-Wl,-rpath, # [osx]
       about:
         home: https://systemc.org/
         summary: 'The language for System-level design, modeling and verification'
