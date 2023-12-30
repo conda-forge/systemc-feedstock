@@ -21,14 +21,12 @@ package:
   version: {{ conda_version }}
 
 source:
-  git_url: https://github.com/accellera-official/systemc.git
-  git_rev: master
-  #url: https://github.com/accellera-official/systemc/archive/refs/tags/{{ version }}.tar.gz
-  #sha256: 580ec20807c2e536eadb9b3d1770c41c5f317b1ad8db0737c4cbf14836cf1c1d
+  url: https://github.com/accellera-official/systemc/archive/refs/tags/{{ version }}.tar.gz
+  sha256: 580ec20807c2e536eadb9b3d1770c41c5f317b1ad8db0737c4cbf14836cf1c1d
   patches:
     - patches/0001-examples-sysc-2.3-simple_async-needs-PTHREADS.patch  # [not win] https://github.com/accellera-official/systemc/pull/44
-      #- patches/0002-Do-not-fail-when-installing-non-existent-doc-files-f.patch
-      #- patches/0003-SYSTEMC_VERSION-consistent-with-20231129-tag.patch
+    - patches/0002-Do-not-fail-when-installing-non-existent-doc-files-f.patch
+    - patches/0003-SYSTEMC_VERSION-consistent-with-20231129-tag.patch
     - patches/0004-pkgconfig-for-real-we-re-running-from-autoreconf.patch
 
 build:
@@ -68,6 +66,8 @@ outputs:
       test:
         commands:
           - ls -l "$PREFIX"/lib/
+          - test -f "$PREFIX"/lib/libsystemc"$SHLIB_EXT".{{ version }}  # [linux]
+          - test -f "$PREFIX"/lib/libsystemc.{{ version }}"$SHLIB_EXT"  # [osx]
       about:
         home: https://systemc.org/
         summary: 'The language for System-level design, modeling and verification'
@@ -182,6 +182,12 @@ outputs:
           - nmake /nologo CONFIG=Release PLATFORM=Win32 VCBUILD=vcbuild check  # [win32]
           - test "$SYSTEMC_HOME" == "$PREFIX"                    # [not win]
           - ls -l "$PREFIX"/lib                                  # [not win]
+          - test -f "$PREFIX"/lib/libsystemc"$SHLIB_EXT"         # [not win]
+          - test -f "$PREFIX"/lib/libsystemc"$SHLIB_EXT".{{ major_minor }}  # [linux]
+          - test -f "$PREFIX"/lib/libsystemc.{{ major_minor }}"$SHLIB_EXT"  # [osx]
+          - pkg-config --print-provides systemc                             # [not win]
+          - pkg-config --print-errors --exact-version={{ version }} systemc  # [not win]
+          - pkg-config --print-provides tlm                                 # [not win]
           # tlm version is decoupled from systemc, so just make sure pkg-config is there
           - cp -r "$PREFIX"/share/doc/systemc/examples .         # [not win]
           # patch Makefile.rules because we want to use the installed libsystemc
