@@ -1,0 +1,25 @@
+From 05a31b737fa03ef1613fd41448e8c9d918c6a8ac Mon Sep 17 00:00:00 2001
+From: Tim Snyder <snyder.tim@gmail.com>
+Date: Sat, 30 Dec 2023 00:56:21 +0000
+Subject: [PATCH] SYSTEMC_VERSION consistent with 20231129 tag
+
+---
+ src/sysc/kernel/sc_ver.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/sysc/kernel/sc_ver.h b/src/sysc/kernel/sc_ver.h
+index c6be98f8..d7bad15f 100644
+--- a/src/sysc/kernel/sc_ver.h
++++ b/src/sysc/kernel/sc_ver.h
+@@ -55,7 +55,7 @@ extern SC_API const std::string  sc_copyright_string;
+ 
+ #define SYSTEMC_3_0_0
+ 
+-#define SYSTEMC_VERSION       20231124
++#define SYSTEMC_VERSION       20231129
+ #define SC_VERSION_ORIGINATOR "Accellera"
+ #define SC_VERSION_MAJOR      3
+ #define SC_VERSION_MINOR      0
+-- 
+2.43.0
+
