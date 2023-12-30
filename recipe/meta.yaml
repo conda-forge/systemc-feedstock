@@ -59,8 +59,8 @@ outputs:
           build:
               - {{ compiler('cxx') }}
       files:
-          - lib/libsystemc.so.?.?.?                              # [linux]
-          - lib/libsystemc.?.?.?.dylib                           # [osx]
+          - lib/libsystemc.so.?.?.?*                             # [linux]
+          - lib/libsystemc.?.?.?*.dylib                          # [osx]
       test:
         commands:
           - ls -l "$PREFIX"/lib/
