@@ -1,4 +1,6 @@
 #!/bin/bash
+# Get an updated config.sub and config.guess
+cp $BUILD_PREFIX/share/gnuconfig/config.* ./config
 
 set -ex
 # run through configure of autotools build for now because cmake build doesn't install pkg-config files

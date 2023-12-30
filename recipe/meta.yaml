@@ -29,6 +29,7 @@ build:
 
 requirements:
   build:
+    - gnuconfig  # [unix]
     - {{ compiler('cxx') }}
     - make      # [not win]
     - autoconf  # [not win]
