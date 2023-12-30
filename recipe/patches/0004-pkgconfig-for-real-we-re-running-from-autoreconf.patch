@@ -1,0 +1,25 @@
+From 43088b9dea790eb6246c757f323ada6e57377a2e Mon Sep 17 00:00:00 2001
+From: Tim Snyder <snyder.tim@gmail.com>
+Date: Sat, 30 Dec 2023 03:54:00 +0000
+Subject: [PATCH] pkgconfig for real, we're running from autoreconf
+
+---
+ configure.ac | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/configure.ac b/configure.ac
+index 9dfc102d..4f174c25 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -39,7 +39,7 @@ dnl
+ dnl Initialization.
+ dnl
+ AC_INIT([SystemC],
+-        [3.0.0],
++        [3.0.0_pub_rev_20231129],
+         [http://forums.accellera.org/forum/9-systemc/],
+         [systemc],
+         [http://accellera.org/],
+-- 
+2.17.1
+
