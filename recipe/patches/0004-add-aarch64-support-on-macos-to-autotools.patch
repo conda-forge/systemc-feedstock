@@ -1,12 +1,12 @@
-From 99f8dfbce47cedab40645c5693f2c31f8faf13b6 Mon Sep 17 00:00:00 2001
+From a04f9d03d07d85839b4ded017ce030b254089405 Mon Sep 17 00:00:00 2001
 From: Tim Snyder <snyder.tim@gmail.com>
 Date: Sat, 30 Dec 2023 17:00:45 +0000
 Subject: [PATCH] add aarch64 support on macos to autotools
 
 ---
  configure    | 19411 -------------------------------------------------
- configure.ac |     4 +
- 2 files changed, 4 insertions(+), 19411 deletions(-)
+ configure.ac |     5 +
+ 2 files changed, 5 insertions(+), 19411 deletions(-)
  delete mode 100755 configure
 
 diff --git a/configure b/configure
@@ -19427,14 +19427,22 @@ index a5f3550a..00000000
 -fi
 -
 diff --git a/configure.ac b/configure.ac
-index 88ee597d..5f80482d 100644
+index 88ee597d..1a138dfa 100644
 --- a/configure.ac
 +++ b/configure.ac
-@@ -203,6 +203,10 @@ AS_CASE([${TARGET_ARCH}],
+@@ -153,6 +153,7 @@ AS_CASE([${TARGET_ARCH}],
+   [hpux11|sparcOS5],
+     [AS_VAR_IF([GXX],[yes],[TARGET_ARCH="gcc${TARGET_ARCH}"])])
+ 
++AC_MSG_WARN("target_arch:${TARGET_ARCH} target_cpu:'${target_cpu}'")
+ dnl
+ dnl Refine architecture settings
+ dnl
+@@ -203,6 +204,10 @@ AS_CASE([${TARGET_ARCH}],
           [TARGET_ARCH="${TARGET_ARCH}ppc"
            CPU_ARCH="ppc"
            QT_ARCH="powerpc-apple-macosx"],
-+       [arm], dnl
++       [aarch64], dnl
 +         [TARGET_ARCH="${TARGET_ARCH}arm"
 +          CPU_ARCH="arm64"
 +          QT_ARCH="pthreads"],
