@@ -1,14 +1,20 @@
-From f524410c251744b1c9a1a173e40f946d1328fd83 Mon Sep 17 00:00:00 2001
+From 3fdc0c2cdc2768b3085325ce75fcf4e2fc0472e8 Mon Sep 17 00:00:00 2001
 From: Tim Snyder <snyder.tim@gmail.com>
 Date: Mon, 13 Mar 2023 06:06:54 +0000
-Subject: [PATCH] examples/sysc/2.3/simple_async needs PTHREADS
+Subject: [PATCH] some examples need PTHREADS
 
+Since I'm building using PTHREADS instead of the builtin QuickThreads
+and the examples don't build that way by default
+
+examples/sysc/2.3/simple_async
+examples/sysc/async_suspend
 ---
  examples/sysc/2.3/simple_async/Makefile | 2 ++
- 1 file changed, 2 insertions(+)
+ examples/sysc/async_suspend/Makefile    | 2 ++
+ 2 files changed, 4 insertions(+)
 
 diff --git a/examples/sysc/2.3/simple_async/Makefile b/examples/sysc/2.3/simple_async/Makefile
-index 1c4f59cc0..ac4e4a64e 100644
+index 1c4f59cc..2361b911 100644
 --- a/examples/sysc/2.3/simple_async/Makefile
 +++ b/examples/sysc/2.3/simple_async/Makefile
 @@ -4,4 +4,6 @@ include ../../../build-unix/Makefile.config
@@ -18,6 +24,16 @@ index 1c4f59cc0..ac4e4a64e 100644
 +PTHREADS = 1
 +
  include ../../../build-unix/Makefile.rules
+diff --git a/examples/sysc/async_suspend/Makefile b/examples/sysc/async_suspend/Makefile
+index ae9b3d91..cf7e1277 100644
+--- a/examples/sysc/async_suspend/Makefile
++++ b/examples/sysc/async_suspend/Makefile
+@@ -1,3 +1,5 @@
++PTHREADS = 1
++
+ include ../../build-unix/Makefile.config
+ 
+ PROJECT := async_suspend
 -- 
-2.39.1
+2.17.1
 
