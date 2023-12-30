@@ -27,6 +27,7 @@ source:
     - patches/0001-examples-sysc-2.3-simple_async-needs-PTHREADS.patch  # [not win] https://github.com/accellera-official/systemc/pull/44
     - patches/0002-Do-not-fail-when-installing-non-existent-doc-files-f.patch
     - patches/0003-SYSTEMC_VERSION-consistent-with-20231129-tag.patch
+    - patches/0004-pkgconfig-files-need-to-consistently-report-version-.patch
 
 build:
   number: 0
