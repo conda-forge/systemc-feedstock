@@ -186,7 +186,7 @@ outputs:
           - test -f "$PREFIX"/lib/libsystemc"$SHLIB_EXT".{{ major_minor }}  # [linux]
           - test -f "$PREFIX"/lib/libsystemc.{{ major_minor }}"$SHLIB_EXT"  # [osx]
           - pkg-config --print-provides systemc                             # [not win]
-          - pkg-config --print-errors --exact-version=$PKG_VERSION systemc  # [not win]
+          - pkg-config --print-errors --exact-version={{ version }} systemc  # [not win]
           - pkg-config --print-provides tlm                                 # [not win]
           # tlm version is decoupled from systemc, so just make sure pkg-config is there
           - cp -r "$PREFIX"/share/doc/systemc/examples .         # [not win]
