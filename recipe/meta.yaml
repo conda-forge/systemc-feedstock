@@ -23,12 +23,14 @@ source:
     - patches/0001-examples-sysc-2.3-simple_async-needs-PTHREADS.patch  # [not win] https://github.com/accellera-official/systemc/pull/44
     - patches/0002-rm-project-default-CXX-std.patch
     - patches/0003-fixup-illegal-utf-8-characters-in-comments.patch
+    - patches/0004-add-aarch64-support-on-macos-to-autotools.patch
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
+    - gnuconfig  # [unix]
     - {{ compiler('cxx') }}
     - make      # [not win]
     - autoconf  # [not win]
