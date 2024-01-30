@@ -35,6 +35,7 @@ requirements:
     - automake  # [not win]
     - libtool   # [not win]
     - cmake
+    - git
 
 
 # split package into:
