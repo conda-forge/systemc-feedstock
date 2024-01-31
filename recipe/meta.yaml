@@ -1,5 +1,5 @@
 {% set name = "systemc" %}
-{% set version = "2.3.4" %}
+{% set version = "2.3.3" %}
 {% set major_minor = ".".join(version.split(".")[0:2]) %}
 
 # tried to do this instead of having preprocessor selectors
@@ -18,7 +18,7 @@ package:
 
 source:
   url: https://github.com/accellera-official/systemc/archive/refs/tags/{{ version }}.tar.gz
-  sha256: bfb309485a8ad35a08ee78827d1647a451ec5455767b25136e74522a6f41e0ea
+  sha256: 5781b9a351e5afedabc37d145e5f7edec08f3fd5de00ffeb8fa1f3086b1f7b3f
   patches:
     - patches/0001-examples-sysc-2.3-simple_async-needs-PTHREADS.patch  # [not win] https://github.com/accellera-official/systemc/pull/44
     - patches/0002-rm-project-default-CXX-std.patch
@@ -26,6 +26,7 @@ source:
 
 build:
   number: 0
+  skip: True  # [win]
 
 requirements:
   build:
@@ -35,6 +36,7 @@ requirements:
     - automake  # [not win]
     - libtool   # [not win]
     - cmake
+    - git
 
 
 # split package into:
