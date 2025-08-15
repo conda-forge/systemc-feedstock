@@ -56,8 +56,8 @@ virtual platforms for hardware/software co-design. SystemC has been standardized
 SystemC Initiative (OSCI) and Accellera Systems Initiative and ratified as IEEE Std. 1666(TM)-2011.
 
 
-About systemc-doc
------------------
+About systemc
+-------------
 
 Home: https://systemc.org/
 
@@ -69,8 +69,7 @@ Development: https://github.com/accellera-official/systemc
 
 Documentation: https://ieeexplore.ieee.org/document/6134619
 
-Documentation installed by upstream build into $PREFIX along with the examples.
-On Windows, the documentation is a bit light but the examples are in here.
+Metapackage containing everything for development and runtime.
 
 SystemC(TM) addresses the need for a system design and verification language that spans hardware
 and software. It is a language built in standard C++ by extending the language with the use of
@@ -112,8 +111,8 @@ virtual platforms for hardware/software co-design. SystemC has been standardized
 SystemC Initiative (OSCI) and Accellera Systems Initiative and ratified as IEEE Std. 1666(TM)-2011.
 
 
-About systemc
--------------
+About systemc-doc
+-----------------
 
 Home: https://systemc.org/
 
@@ -125,7 +124,8 @@ Development: https://github.com/accellera-official/systemc
 
 Documentation: https://ieeexplore.ieee.org/document/6134619
 
-Metapackage containing everything for development and runtime.
+Documentation installed by upstream build into $PREFIX along with the examples.
+On Windows, the documentation is a bit light but the examples are in here.
 
 SystemC(TM) addresses the need for a system design and verification language that spans hardware
 and software. It is a language built in standard C++ by extending the language with the use of
