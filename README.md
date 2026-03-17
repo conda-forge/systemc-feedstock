@@ -56,8 +56,8 @@ virtual platforms for hardware/software co-design. SystemC has been standardized
 SystemC Initiative (OSCI) and Accellera Systems Initiative and ratified as IEEE Std. 1666(TM)-2011.
 
 
-About systemc-doc
------------------
+About systemc
+-------------
 
 Home: https://systemc.org/
 
@@ -69,8 +69,7 @@ Development: https://github.com/accellera-official/systemc
 
 Documentation: https://ieeexplore.ieee.org/document/6134619
 
-Documentation installed by upstream build into $PREFIX along with the examples.
-On Windows, the documentation is a bit light but the examples are in here.
+Metapackage containing everything for development and runtime.
 
 SystemC(TM) addresses the need for a system design and verification language that spans hardware
 and software. It is a language built in standard C++ by extending the language with the use of
@@ -112,8 +111,8 @@ virtual platforms for hardware/software co-design. SystemC has been standardized
 SystemC Initiative (OSCI) and Accellera Systems Initiative and ratified as IEEE Std. 1666(TM)-2011.
 
 
-About systemc
--------------
+About systemc-doc
+-----------------
 
 Home: https://systemc.org/
 
@@ -125,7 +124,8 @@ Development: https://github.com/accellera-official/systemc
 
 Documentation: https://ieeexplore.ieee.org/document/6134619
 
-Metapackage containing everything for development and runtime.
+Documentation installed by upstream build into $PREFIX along with the examples.
+On Windows, the documentation is a bit light but the examples are in here.
 
 SystemC(TM) addresses the need for a system design and verification language that spans hardware
 and software. It is a language built in standard C++ by extending the language with the use of
@@ -271,12 +271,12 @@ it is possible to build and upload installable packages to the
 [conda-forge](https://anaconda.org/conda-forge) [anaconda.org](https://anaconda.org/)
 channel for Linux, Windows and OSX respectively.
 
-To manage the continuous integration and simplify feedstock maintenance
+To manage the continuous integration and simplify feedstock maintenance,
 [conda-smithy](https://github.com/conda-forge/conda-smithy) has been developed.
 Using the ``conda-forge.yml`` within this repository, it is possible to re-render all of
 this feedstock's supporting files (e.g. the CI configuration files) with ``conda smithy rerender``.
 
-For more information please check the [conda-forge documentation](https://conda-forge.org/docs/).
+For more information, please check the [conda-forge documentation](https://conda-forge.org/docs/).
 
 Terminology
 ===========
@@ -303,7 +303,7 @@ merged, the recipe will be re-built and uploaded automatically to the
 everybody to install and use from the `conda-forge` channel.
 Note that all branches in the conda-forge/systemc-feedstock are
 immediately built and any created packages are uploaded, so PRs should be based
-on branches in forks and branches in the main repository should only be used to
+on branches in forks, and branches in the main repository should only be used to
 build distinct package versions.
 
 In order to produce a uniquely identifiable distribution:
