@@ -18,5 +18,5 @@ if errorlevel 1 exit 1
 nmake install
 if errorlevel 1 exit 1
 
-xcopy %SRC_DIR%\examples %LIBRARY_PREFIX%\share\doc\systemc\examples\ /F /E /H
+xcopy %SRC_DIR%\examples %LIBRARY_PREFIX%\share\doc\systemc\examples\ /F /E /H /Y
 if errorlevel 1 exit 1
