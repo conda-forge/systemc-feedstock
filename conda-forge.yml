@@ -9,3 +9,4 @@ github:
 test: native_and_emulated
 azure:
   store_build_artifacts: true
+conda_build_tool: rattler-build

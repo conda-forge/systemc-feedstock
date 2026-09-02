@@ -17,31 +17,6 @@ Development: https://github.com/accellera-official/systemc
 
 Documentation: https://ieeexplore.ieee.org/document/6134619
 
-SystemC(TM) addresses the need for a system design and verification language that spans hardware
-and software. It is a language built in standard C++ by extending the language with the use of
-class libraries. The language is particularly suited to model system's partitioning, to evaluate
-and verify the assignment of blocks to either hardware or software implementations, and to
-architect and measure the interactions between and among functional blocks. Leading companies in
-the intellectual property (IP), electronic design automation (EDA), semiconductor, electronic
-systems, and embedded software industries currently use SystemC for architectural exploration,
-to deliver high-performance hardware blocks at various levels of abstraction and to develop
-virtual platforms for hardware/software co-design. SystemC has been standardized by the Open
-SystemC Initiative (OSCI) and Accellera Systems Initiative and ratified as IEEE Std. 1666(TM)-2011.
-
-
-About libsystemc
-----------------
-
-Home: https://systemc.org/
-
-Package license: Apache-2.0
-
-Summary: The language for System-level design, modeling and verification
-
-Development: https://github.com/accellera-official/systemc
-
-Documentation: https://ieeexplore.ieee.org/document/6134619
-
 Runtime dynamically-linked library only.
 
 SystemC(TM) addresses the need for a system design and verification language that spans hardware
@@ -54,7 +29,6 @@ systems, and embedded software industries currently use SystemC for architectura
 to deliver high-performance hardware blocks at various levels of abstraction and to develop
 virtual platforms for hardware/software co-design. SystemC has been standardized by the Open
 SystemC Initiative (OSCI) and Accellera Systems Initiative and ratified as IEEE Std. 1666(TM)-2011.
-
 
 About systemc
 -------------
@@ -82,7 +56,6 @@ to deliver high-performance hardware blocks at various levels of abstraction and
 virtual platforms for hardware/software co-design. SystemC has been standardized by the Open
 SystemC Initiative (OSCI) and Accellera Systems Initiative and ratified as IEEE Std. 1666(TM)-2011.
 
-
 About systemc-dev
 -----------------
 
@@ -97,7 +70,7 @@ Development: https://github.com/accellera-official/systemc
 Documentation: https://ieeexplore.ieee.org/document/6134619
 
 Everything needed for development using System-C. Headers, unversioned dyn-lib symlinks (unix)
-the static systemc.lib (windows).
+and the static systemc.lib (Windows).
 
 SystemC(TM) addresses the need for a system design and verification language that spans hardware
 and software. It is a language built in standard C++ by extending the language with the use of
@@ -109,7 +82,6 @@ systems, and embedded software industries currently use SystemC for architectura
 to deliver high-performance hardware blocks at various levels of abstraction and to develop
 virtual platforms for hardware/software co-design. SystemC has been standardized by the Open
 SystemC Initiative (OSCI) and Accellera Systems Initiative and ratified as IEEE Std. 1666(TM)-2011.
-
 
 About systemc-doc
 -----------------
@@ -138,12 +110,18 @@ to deliver high-performance hardware blocks at various levels of abstraction and
 virtual platforms for hardware/software co-design. SystemC has been standardized by the Open
 SystemC Initiative (OSCI) and Accellera Systems Initiative and ratified as IEEE Std. 1666(TM)-2011.
 
-
 Current build status
 ====================
 
 
-<table>
+<table><tr>
+    <td>GitHub Actions</td>
+    <td>
+      <a href="https://github.com/conda-forge/systemc-feedstock/actions/workflows/conda-build.yml">
+        <img src="https://github.com/conda-forge/systemc-feedstock/actions/workflows/conda-build.yml/badge.svg?event=push&branch=main">
+      </a>
+    </td>
+  </tr>
     
   <tr>
     <td>Azure</td>
@@ -157,31 +135,10 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_64</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=21117&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/systemc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
               <td>osx_64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=21117&branchName=main">
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/systemc-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_arm64</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=21117&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/systemc-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>win_64</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=21117&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/systemc-feedstock?branchName=main&jobName=win&configuration=win%20win_64_" alt="variant">
                 </a>
               </td>
             </tr>
@@ -212,31 +169,73 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `libsystemc, systemc, systemc-dev, systemc-doc` can be installed with `conda`:
+How to use
+----------
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda install libsystemc systemc systemc-dev systemc-doc
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba install libsystemc systemc systemc-dev systemc-doc
 ```
 
-It is possible to list all of the versions of `libsystemc` available on your platform with `conda`:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+# for adding to your local project
+pixi add libsystemc systemc systemc-dev systemc-doc
+# for installing globally
+pixi global install libsystemc systemc systemc-dev systemc-doc
+```
+
+</details>
+
+Search package versions
+-----------------------
+
+It is possible to list all of the versions of `libsystemc` available on your platform:
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda search libsystemc --channel conda-forge
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba search libsystemc --channel conda-forge
 ```
 
-Alternatively, `mamba repoquery` may provide more information:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+pixi search libsystemc --channel conda-forge
+```
+
+</details>
+
+<details>
+<summary>With mamba repoquery, which may provide more information</summary>
 
 ```
 # Search all versions available on your platform:
@@ -248,6 +247,8 @@ mamba repoquery whoneeds libsystemc --channel conda-forge
 # List dependencies of `libsystemc`:
 mamba repoquery depends libsystemc --channel conda-forge
 ```
+
+</details>
 
 
 About conda-forge
@@ -318,7 +319,4 @@ Feedstock Maintainers
 
 * [@timkpaine](https://github.com/timkpaine/)
 * [@timsnyder](https://github.com/timsnyder/)
-
-
-<!-- dummy commit to enable rerendering -->
 
